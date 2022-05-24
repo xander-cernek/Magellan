@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Magellan/static/css/main.073c9b0a.css",
+    "main.js": "/Magellan/static/js/main.53a679e3.js",
+    "static/js/787.a56cec46.chunk.js": "/Magellan/static/js/787.a56cec46.chunk.js",
+    "static/media/logo.svg": "/Magellan/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Magellan/index.html",
+    "main.073c9b0a.css.map": "/Magellan/static/css/main.073c9b0a.css.map",
+    "main.53a679e3.js.map": "/Magellan/static/js/main.53a679e3.js.map",
+    "787.a56cec46.chunk.js.map": "/Magellan/static/js/787.a56cec46.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.53a679e3.js"
+  ]
+}

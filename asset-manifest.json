@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Magellan/static/css/main.2f0579b5.css",
-    "main.js": "/Magellan/static/js/main.3ed24418.js",
+    "main.css": "/Magellan/static/css/main.2864b67d.css",
+    "main.js": "/Magellan/static/js/main.799c6458.js",
     "static/js/787.a56cec46.chunk.js": "/Magellan/static/js/787.a56cec46.chunk.js",
     "index.html": "/Magellan/index.html",
-    "main.2f0579b5.css.map": "/Magellan/static/css/main.2f0579b5.css.map",
-    "main.3ed24418.js.map": "/Magellan/static/js/main.3ed24418.js.map",
+    "main.2864b67d.css.map": "/Magellan/static/css/main.2864b67d.css.map",
+    "main.799c6458.js.map": "/Magellan/static/js/main.799c6458.js.map",
     "787.a56cec46.chunk.js.map": "/Magellan/static/js/787.a56cec46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f0579b5.css",
-    "static/js/main.3ed24418.js"
+    "static/css/main.2864b67d.css",
+    "static/js/main.799c6458.js"
   ]
 }

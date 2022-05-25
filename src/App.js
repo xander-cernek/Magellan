@@ -1,14 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import { Card } from './Card';
+import React from 'react';
+import { TestScripts } from './TestScripts';
 
-function App() {
-  return (
-    <div className="App">
-      <div><h1>G1, Blind Matchup</h1></div>
-      <Card />
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+  render() {
+    return(
+        <div className="App">
+          <TestScripts />
+        </div>
+      );
+    } 
 }
 
 export default App;

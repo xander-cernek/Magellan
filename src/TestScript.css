@@ -1,0 +1,20 @@
+#deck-input {
+    height: 1000px;
+}
+
+#deck-input-div {
+    position:absolute;
+    left:5px;
+    top:20px;
+}
+
+#card-box {
+    position:absolute;
+    left: 25%;
+    top: 5%;
+}
+
+.CardDisplayBar {
+    display: flex;
+    flex-direction: row;
+}

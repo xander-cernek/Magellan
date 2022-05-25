@@ -5,13 +5,14 @@ import './Card.css';
 class Card extends React.Component {
     constructor(props) {
         super(props);
+        console.log(this.props.seed);
         var gen = require('random-seed');
-        var seed = 'My Secret String Value';
-        var rand4 = gen.create(seed);
+        var rand4 = gen.create(this.props.seed);
         rand4.initState();
         this.state = {
             scryfallResponse: [],
-            randomEngine: rand4
+            randomEngine: rand4,
+            seed: this.props.seed
         };
         this.handleClick = e => {
             var deck = ["Amulet of Vigor",
@@ -77,19 +78,12 @@ class Card extends React.Component {
         ];
 
         for (let i = deck.length - 1; i > 0; i--) {
-            let j = this.state.randomEngine(60)
+            let j = this.state.randomEngine(deck.length)
             let temp = deck[i];
             deck[i] = deck[j];
             deck[j] = temp;
         }
 
-        
-            // console.log('The first seven cards are:');
-
-            // display 5 results
-            // for (let i = 0; i < 7; i++) {
-            //     console.log(`${deck[i]}`)
-            // }
             var jsonData = {
               "identifiers": [
                 {
@@ -141,8 +135,10 @@ class Card extends React.Component {
             });
             
           }
+        
+          this.handleClick();
     }
-  
+
     render() {
         return (
             <div>

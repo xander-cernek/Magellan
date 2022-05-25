@@ -11,7 +11,15 @@
 #card-box {
     position:absolute;
     left: 25%;
-    top: 5%;
+    top: 10%;
+}
+
+#button-box {
+    margin: 5px;
+}
+
+#results-box {
+    margin: 5px;
 }
 
 .CardDisplayBar {

@@ -5,10 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 class TestScripts extends React.Component {
     constructor(props) {
         super(props);
+        let seed = uuidv4().slice(0, 5)
         this.state = { 
             started: false,
-            seed: '',
-            engine: initEngine(''),
+            seed: seed,
+            engine: initEngine(seed),
             deck: defaultDeck(),
             scryfallResponse: [],
             firstSeven: [],
@@ -28,6 +29,10 @@ class TestScripts extends React.Component {
     }
 
     revealCards() {
+        console.log("Revealing cards");
+        if (this.state.scryfallResponse.length === 0) {
+            this.handleDeckSubmit();
+        }
         this.setState({ started: true });
         this.handleRoll();
     }
@@ -38,7 +43,10 @@ class TestScripts extends React.Component {
 
     handleRoll(event) {
         if (event) {
-            console.log(event.value);
+            console.log("Event: ", event.target.value);
+            let results = this.state.results;
+            results.push(event.target.value);
+            this.setState( { results: results })
         }
         this.setState({ firstSeven: roll(this.state) });
     }
@@ -80,6 +88,7 @@ class TestScripts extends React.Component {
         if (this.state.started) {
             cards = foo(this.state);
         }
+        let results = listToString(this.state.results);
         return(
             <div>
                 <div id="deck-input-div">
@@ -93,12 +102,24 @@ class TestScripts extends React.Component {
                     {cards}
                 </div>
                 <div id="button-box">
-                    <button value="keep" id="keep-button" className="button-1" onClick={this.handleRoll}>Keep</button>
-                    <button value="mull" id="keep-button" className="button-1" onClick={this.handleRoll}>Mull</button>
+                    <button value="🟩" id="keep-button" className="button-1" onClick={this.handleRoll}>Keep</button>
+                    <button value="🟥" id="keep-button" className="button-1" onClick={this.handleRoll}>Mull</button>
+                </div>
+                <div id="results-box">
+                    {results}
+                    <button id="copy-results" className="button-1" onClick={() => {navigator.clipboard.writeText("Seed: " + this.state.seed + " " + listToString(this.state.results))}}>Copy Results</button>
                 </div>
             </div>
         );
     }
+}
+
+function listToString(list) {
+    let result = "";
+    for (let i = 0; i < list.length; i++) {
+        result += list[i];
+    }
+    return result;
 }
 
 function foo(props) {
@@ -113,7 +134,6 @@ function initEngine(seed) {
 }
 
 function roll(props) {
-    console.log(props.scryfallResponse);
     let deckCopy = props.scryfallResponse;
     for (let i = deckCopy.length - 1; i > 0; i--) {
         let j = props.engine(deckCopy.length)
